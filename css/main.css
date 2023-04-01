@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-roboto;
+  }
+
+  aside {
+    @apply w-[240px];
+  }
+
+  aside.active{
+    @apply w-[110px];
+  }
+
+}
+
+@layer components{
+  .container {
+    @apply max-w-[1272px];
+  }
+  
+  .content{
+    @apply pl-[240px]  sm:pl-0;
+  }
+
+  .content.active{
+    @apply pl-[110px]; 
+  }
+}
+
+@layer utilities{
+  .nav-link.active{
+    @apply flex-col gap-1;
+  }
+  
+  .nav-link.active span{
+    @apply text-[10px];
+  }
+
+  .category-link.active{
+    @apply bg-main text-white hover:bg-main;
+  }
+
+}

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>YouTube</title>
+</head>
+
+<body>
+  <header class="flex justify-between items-center fixed top-0 left-0 right-0 bg-white z-50 gap-5 sm:py-2 sm:px-4">
+    <!-- Logo -->
+    <div class="flex gap-4 py-2 pl-3 pr-6">
+      <button id="burger"
+        class="w-10 h-10 flex justify-center items-center hover:bg-main/[0.05] rounded-full sm:hidden">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 6H3V5H21V6ZM21 11H3V12H21V11ZM21 17H3V18H21V17Z" fill="#030303" />
+        </svg>
+      </button>
+      <a class="flex items-center" href="#">
+        <svg width="90" height="20" viewBox="0 0 90 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M27.9727 3.12324C27.6435 1.89323 26.6768 0.926623 25.4468 0.597366C23.2197 1.78814e-07 14.285 0 14.285 0C14.285 0 5.35042 1.78814e-07 3.12323 0.597366C1.89323 0.926623 0.926623 1.89323 0.597366 3.12324C1.78814e-07 5.35042 0 10 0 10C0 10 1.78814e-07 14.6496 0.597366 16.8768C0.926623 18.1068 1.89323 19.0734 3.12323 19.4026C5.35042 20 14.285 20 14.285 20C14.285 20 23.2197 20 25.4468 19.4026C26.6768 19.0734 27.6435 18.1068 27.9727 16.8768C28.5701 14.6496 28.5701 10 28.5701 10C28.5701 10 28.5677 5.35042 27.9727 3.12324Z"
+            fill="#FF0000" />
+          <path d="M11.4253 14.2854L18.8477 10.0004L11.4253 5.71533V14.2854Z" fill="white" />
+          <path
+            d="M34.6024 13.0036L31.3945 1.41846H34.1932L35.3174 6.6701C35.6043 7.96361 35.8136 9.06662 35.95 9.97913H36.0323C36.1264 9.32532 36.3381 8.22937 36.665 6.68892L37.8291 1.41846H40.6278L37.3799 13.0036V18.561H34.6001V13.0036H34.6024Z"
+            fill="#212121" />
+          <path
+            d="M41.4697 18.1937C40.9053 17.8127 40.5031 17.22 40.2632 16.4157C40.0257 15.6114 39.9058 14.5437 39.9058 13.2078V11.3898C39.9058 10.0422 40.0422 8.95805 40.315 8.14196C40.5878 7.32588 41.0135 6.72851 41.592 6.35457C42.1706 5.98063 42.9302 5.79248 43.871 5.79248C44.7976 5.79248 45.5384 5.98298 46.0981 6.36398C46.6555 6.74497 47.0647 7.34234 47.3234 8.15137C47.5821 8.96275 47.7115 10.0422 47.7115 11.3898V13.2078C47.7115 14.5437 47.5845 15.6161 47.3329 16.4251C47.0812 17.2365 46.672 17.8292 46.1075 18.2031C45.5431 18.5771 44.7764 18.7652 43.8098 18.7652C42.8126 18.7675 42.0342 18.5747 41.4697 18.1937ZM44.6353 16.2323C44.7905 15.8231 44.8705 15.1575 44.8705 14.2309V10.3292C44.8705 9.43077 44.7929 8.77225 44.6353 8.35833C44.4777 7.94206 44.2026 7.7351 43.8074 7.7351C43.4265 7.7351 43.156 7.94206 43.0008 8.35833C42.8432 8.77461 42.7656 9.43077 42.7656 10.3292V14.2309C42.7656 15.1575 42.8408 15.8254 42.9914 16.2323C43.1419 16.6415 43.4123 16.8461 43.8074 16.8461C44.2026 16.8461 44.4777 16.6415 44.6353 16.2323Z"
+            fill="#212121" />
+          <path
+            d="M56.8154 18.5634H54.6094L54.3648 17.03H54.3037C53.7039 18.1871 52.8055 18.7656 51.6061 18.7656C50.7759 18.7656 50.1621 18.4928 49.767 17.9496C49.3719 17.4039 49.1743 16.5526 49.1743 15.3955V6.03751H51.9942V15.2308C51.9942 15.7906 52.0553 16.188 52.1776 16.4256C52.2999 16.6631 52.5045 16.783 52.7914 16.783C53.036 16.783 53.2712 16.7078 53.497 16.5573C53.7228 16.4067 53.8874 16.2162 53.9979 15.9858V6.03516H56.8154V18.5634Z"
+            fill="#212121" />
+          <path d="M64.4755 3.68758H61.6768V18.5629H58.9181V3.68758H56.1194V1.42041H64.4755V3.68758Z" fill="#212121" />
+          <path
+            d="M71.2768 18.5634H69.0708L68.8262 17.03H68.7651C68.1654 18.1871 67.267 18.7656 66.0675 18.7656C65.2373 18.7656 64.6235 18.4928 64.2284 17.9496C63.8333 17.4039 63.6357 16.5526 63.6357 15.3955V6.03751H66.4556V15.2308C66.4556 15.7906 66.5167 16.188 66.639 16.4256C66.7613 16.6631 66.9659 16.783 67.2529 16.783C67.4974 16.783 67.7326 16.7078 67.9584 16.5573C68.1842 16.4067 68.3488 16.2162 68.4593 15.9858V6.03516H71.2768V18.5634Z"
+            fill="#212121" />
+          <path
+            d="M80.6091 8.0387C80.4374 7.24849 80.1621 6.67699 79.7812 6.32186C79.4002 5.96674 78.8758 5.79035 78.2079 5.79035C77.6905 5.79035 77.206 5.93616 76.7568 6.23014C76.3076 6.52412 75.9595 6.90747 75.7149 7.38489H75.6938V0.785645H72.9774V18.5608H75.3057L75.5926 17.3755H75.6538C75.8725 17.7988 76.1994 18.1304 76.6345 18.3774C77.0696 18.622 77.5541 18.7443 78.0856 18.7443C79.0381 18.7443 79.7413 18.3045 80.1905 17.4272C80.6397 16.5476 80.8654 15.1765 80.8654 13.3092V11.3266C80.8654 9.92722 80.7784 8.82892 80.6091 8.0387ZM78.0244 13.1492C78.0244 14.0617 77.9868 14.7767 77.9115 15.2941C77.8363 15.8115 77.7116 16.1808 77.5329 16.3971C77.3565 16.6158 77.1166 16.724 76.8179 16.724C76.5851 16.724 76.3711 16.6699 76.1735 16.5594C75.976 16.4512 75.8161 16.2866 75.6938 16.0702V8.96062C75.7878 8.6196 75.9525 8.34209 76.1853 8.12337C76.4158 7.90465 76.6698 7.79646 76.9402 7.79646C77.2272 7.79646 77.4482 7.90935 77.6035 8.13278C77.761 8.35855 77.8692 8.73485 77.9304 9.26636C77.9915 9.79787 78.0221 10.5528 78.0221 11.5335V13.1492H78.0244Z"
+            fill="#212121" />
+          <path
+            d="M84.8657 13.8712C84.8657 14.6755 84.8892 15.2776 84.9363 15.6798C84.9833 16.0819 85.0821 16.3736 85.2326 16.5594C85.3831 16.7428 85.6136 16.8345 85.9264 16.8345C86.3474 16.8345 86.639 16.6699 86.7942 16.343C86.9518 16.0161 87.0365 15.4705 87.0506 14.7085L89.4824 14.8519C89.4965 14.9601 89.5035 15.1106 89.5035 15.3011C89.5035 16.4582 89.186 17.3237 88.5534 17.8952C87.9208 18.4667 87.0247 18.7536 85.8676 18.7536C84.4777 18.7536 83.504 18.3185 82.9466 17.446C82.3869 16.5735 82.1094 15.2259 82.1094 13.4008V11.2136C82.1094 9.33452 82.3987 7.96105 82.9772 7.09558C83.5558 6.2301 84.5459 5.79736 85.9499 5.79736C86.9165 5.79736 87.6597 5.97375 88.1771 6.32888C88.6945 6.684 89.059 7.23433 89.2707 7.98457C89.4824 8.7348 89.5882 9.76961 89.5882 11.0913V13.2362H84.8657V13.8712ZM85.2232 7.96811C85.0797 8.14449 84.9857 8.43377 84.9363 8.83593C84.8892 9.2381 84.8657 9.84722 84.8657 10.6657V11.5641H86.9283V10.6657C86.9283 9.86133 86.9001 9.25221 86.846 8.83593C86.7919 8.41966 86.6931 8.12803 86.5496 7.95635C86.4062 7.78702 86.1851 7.7 85.8864 7.7C85.5854 7.70235 85.3643 7.79172 85.2232 7.96811Z"
+            fill="#212121" />
+        </svg>
+
+      </a>
+    </div>
+
+    <!-- Desktop Search -->
+    <form id="desktop-search" class="max-w-xl w-full sm:hidden">
+      <div class="flex">
+        <input
+          class="flex w-full py-[6px] px-4 border border-[#cccccc] rounded-l-full outline-none focus:border-lightblue"
+          type="search" placeholder="Search">
+        <button class="px-5 py-2 bg-[#F8F8F8] border border-[#cccccc] border-l-0 rounded-r-full hover:bg-secondary/10"
+          type="submit">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_2831)">
+              <path
+                d="M20.87 20.17L15.28 14.58C16.35 13.35 17 11.75 17 10C17 6.13 13.87 3 10 3C6.13 3 3 6.13 3 10C3 13.87 6.13 17 10 17C11.75 17 13.35 16.35 14.58 15.29L20.17 20.88L20.87 20.17ZM10 16C6.69 16 4 13.31 4 10C4 6.69 6.69 4 10 4C13.31 4 16 6.69 16 10C16 13.31 13.31 16 10 16Z"
+                fill="#0F0F0F" />
+            </g>
+            <defs>
+              <clipPath id="clip0_1_2831">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+        <button
+          class="bg-[#F9F9F9] rounded-full flex justify-center items-center w-10 h-10 flex-shrink-0 ml-2 hover:bg-secondary/10">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_2837)">
+              <path
+                d="M12 3C10.34 3 9 4.37 9 6.07V11.93C9 13.63 10.34 15 12 15C13.66 15 15 13.63 15 11.93V6.07C15 4.37 13.66 3 12 3ZM18.5 12H17.5C17.5 15.03 15.03 17.5 12 17.5C8.97 17.5 6.5 15.03 6.5 12H5.5C5.5 15.24 7.89 17.93 11 18.41V21H13V18.41C16.11 17.93 18.5 15.24 18.5 12Z"
+                fill="#0F0F0F" />
+            </g>
+            <defs>
+              <clipPath id="clip0_1_2837">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <button id="open-search" class="hidden sm:block ml-auto" type="submit">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1_2831)">
+          <path
+            d="M20.87 20.17L15.28 14.58C16.35 13.35 17 11.75 17 10C17 6.13 13.87 3 10 3C6.13 3 3 6.13 3 10C3 13.87 6.13 17 10 17C11.75 17 13.35 16.35 14.58 15.29L20.17 20.88L20.87 20.17ZM10 16C6.69 16 4 13.31 4 10C4 6.69 6.69 4 10 4C13.31 4 16 6.69 16 10C16 13.31 13.31 16 10 16Z"
+            fill="#0F0F0F" />
+        </g>
+        <defs>
+          <clipPath id="clip0_1_2831">
+            <rect width="24" height="24" fill="white" />
+          </clipPath>
+        </defs>
+      </svg>
+    </button>
+
+    <!-- Mobile Search -->
+    <div id="mobile-search" class="absolute bg-main/80 top-0 left-0 right-0 bottom-0 p-2 hidden">
+      <form class="max-w-xl w-full">
+        <div class="flex">
+          <input
+            class="flex w-full py-[6px] px-4 border border-[#cccccc] rounded-l-full outline-none focus:border-lightblue"
+            type="search" placeholder="Search">
+          <button class="px-5 py-2 bg-[#F8F8F8] border border-[#cccccc] border-l-0 rounded-r-full hover:bg-secondary/10"
+            type="submit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_2831)">
+                <path
+                  d="M20.87 20.17L15.28 14.58C16.35 13.35 17 11.75 17 10C17 6.13 13.87 3 10 3C6.13 3 3 6.13 3 10C3 13.87 6.13 17 10 17C11.75 17 13.35 16.35 14.58 15.29L20.17 20.88L20.87 20.17ZM10 16C6.69 16 4 13.31 4 10C4 6.69 6.69 4 10 4C13.31 4 16 6.69 16 10C16 13.31 13.31 16 10 16Z"
+                  fill="#0F0F0F" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_2831">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+          <button id="close-search"
+            class="bg-[#F9F9F9] rounded-full flex justify-center items-center w-10 h-10 flex-shrink-0 ml-2">
+            X
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Login button -->
+    <div class="mr-4 flex-shrink-0 sm:mr-0">
+      <button
+        class="flex max-w-fit items-center gap-[6px] py-[6px] px-[10px] sm:p-[6px] border border-main/[0.05] rounded-[18px] hover:bg-main/[0.05]"
+        href="#">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_1_2694)">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 3C16.96 3 21 7.04 21 12C21 13.42 20.66 14.76 20.07 15.96C18.54 14.24 16.09 13.07 12.69 12.93C14.57 12.6 16 10.97 16 9C16 6.79 14.21 5 12 5C9.79 5 8 6.79 8 9C8 10.97 9.43 12.6 11.31 12.93C7.91 13.07 5.46 14.24 3.93 15.96C3.34 14.76 3 13.42 3 12C3 7.04 7.04 3 12 3ZM9 9C9 7.35 10.35 6 12 6C13.65 6 15 7.35 15 9C15 10.65 13.65 12 12 12C10.35 12 9 10.65 9 9ZM12 21C8.84 21 6.06 19.36 4.45 16.88C6.01 14.93 8.61 13.9 12 13.9C15.39 13.9 17.99 14.93 19.55 16.88C17.94 19.36 15.16 21 12 21Z"
+              fill="#065FD4" />
+          </g>
+          <defs>
+            <clipPath id="clip0_1_2694">
+              <rect width="24" height="24" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+        <span class="text-sm leading-4 text-lightblue sm:hidden">Sign in</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex pt-14">
+
+    <!--Desktop Sidebar -->
+    <aside class="fixed left-0 top-0 pt-14 h-full hover:overflow-auto sm:hidden">
+
+      <!-- Nav 1 -->
+      <nav class="py-4 pl-3 pr-6 border-b border-main/[0.05]">
+        <ul>
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2653)">
+                  <path class="group-hover:fill-main" d="M4 10V21H10V15H14V21H20V10L12 3L4 10Z" fill="white"
+                    stroke="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2653">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2661)">
+                  <path class="group-hover:fill-main"
+                    d="M10 14.65V9.34999L15 12L10 14.65ZM17.77 10.32C17 9.99999 16.57 9.81999 16.57 9.81999L18 9.05999C19.84 8.09999 20.53 5.82999 19.56 3.99999C18.59 2.16999 16.32 1.46999 14.49 2.43999L6.00001 6.93999C4.71001 7.61999 3.93001 8.97999 4.00001 10.43C4.07001 11.85 4.93001 13.1 6.22001 13.68C6.25001 13.69 7.42001 14.18 7.42001 14.18L6.00001 14.93C4.17001 15.9 3.47001 18.17 4.44001 20C5.41001 21.83 7.68001 22.53 9.51001 21.56L18.01 17.06C19.3 16.38 20.07 15.02 20 13.57C19.93 12.15 19.06 10.89 17.77 10.32ZM17.54 16.18L9.04001 20.68C7.70001 21.39 6.03001 20.88 5.32001 19.54C4.61001 18.2 5.12001 16.53 6.46001 15.82L8.50001 14.74V13.53L7.81001 13.25L6.70001 12.79C5.71001 12.38 5.05001 11.44 5.00001 10.38C4.95001 9.31999 5.52001 8.31999 6.46001 7.81999L14.96 3.31999C16.3 2.60999 17.97 3.11999 18.68 4.45999C19.39 5.79999 18.88 7.46999 17.54 8.17999L15.5 9.25999V10.47L17.3 11.21C18.29 11.62 18.95 12.56 19 13.62C19.05 14.68 18.48 15.68 17.54 16.18Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2661">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Shorts</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg class="group-hover:fill-main" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2669)">
+                  <path d="M10 18V12L15 15L10 18ZM17 3H7V4H17V3ZM20 6H4V7H20V6ZM22 9H2V21H22V9ZM3 10H21V20H3V10Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2669">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Subscriptions</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav 2 -->
+      <nav class="py-4 pl-3 pr-6 border-b border-main/[0.05]">
+        <ul>
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2679)">
+                  <path d="M11 7L17 10.5L11 14V7ZM18 20H4V6H3V21H18V20ZM21 18H6V3H21V18ZM7 17H20V4H7V17Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2679">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Library</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2687)">
+                  <path
+                    d="M14.97 16.95L10 13.87V7H12V12.76L16.03 15.25L14.97 16.95ZM22 12C22 17.51 17.51 22 12 22C6.49002 22 2.00002 17.51 2.00002 12H3.00002C3.00002 16.96 7.04002 21 12 21C16.96 21 21 16.96 21 12C21 7.04 16.96 3 12 3C8.81002 3 5.92002 4.64 4.28002 7.38C4.17002 7.56 4.06002 7.75 3.97002 7.94C3.96002 7.96 3.95002 7.98 3.94002 8H8.00002V9H1.96002V3H2.96002V7.74C3.00002 7.65 3.03002 7.57 3.07002 7.49C3.18002 7.27 3.30002 7.07 3.42002 6.86C5.22002 3.86 8.51002 2 12 2C17.51 2 22 6.49 22 12Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2687">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">History</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav 3 -->
+      <nav class="hidden-nav py-4 pl-8 pr-[50px] border-b border-main/[0.05]">
+        <span class="text-sm leading-4">
+          Sign in to like videos, comment, and subscribe.
+        </span>
+
+        <a class="flex max-w-fit items-center gap-[6px] py-[6px] px-[10px] mt-3 border border-main/[0.05] rounded-[18px] hover:bg-main/[0.05]"
+          href="#">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_2694)">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 3C16.96 3 21 7.04 21 12C21 13.42 20.66 14.76 20.07 15.96C18.54 14.24 16.09 13.07 12.69 12.93C14.57 12.6 16 10.97 16 9C16 6.79 14.21 5 12 5C9.79 5 8 6.79 8 9C8 10.97 9.43 12.6 11.31 12.93C7.91 13.07 5.46 14.24 3.93 15.96C3.34 14.76 3 13.42 3 12C3 7.04 7.04 3 12 3ZM9 9C9 7.35 10.35 6 12 6C13.65 6 15 7.35 15 9C15 10.65 13.65 12 12 12C10.35 12 9 10.65 9 9ZM12 21C8.84 21 6.06 19.36 4.45 16.88C6.01 14.93 8.61 13.9 12 13.9C15.39 13.9 17.99 14.93 19.55 16.88C17.94 19.36 15.16 21 12 21Z"
+                fill="#065FD4" />
+            </g>
+            <defs>
+              <clipPath id="clip0_1_2694">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          <span class="text-sm leading-4 text-lightblue">Sign in</span>
+        </a>
+      </nav>
+
+      <!-- Nav 4 -->
+      <nav class="hidden-nav py-4 pl-3 pr-6 border-b border-main/[0.05]">
+        <h3 class="pl-3 mb-[6px] text-base">Explore</h3>
+        <ul>
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2707)">
+                  <path
+                    d="M14.72 17.84C14.4 18.11 13.89 18.37 13.49 18.5C12.15 18.83 11.08 18.16 10.87 18.04C10.66 17.93 10.09 17.66 10.09 17.66C10.09 17.66 10.44 17.55 10.5 17.53C11.84 16.99 12.39 16.29 12.59 15.42C12.79 14.58 12.43 13.86 12.28 13.03C12.16 12.34 12.17 11.75 12.4 11.13C12.42 11.08 12.52 10.7 12.52 10.7C12.52 10.7 12.63 11.05 12.65 11.11C13.36 12.62 15.37 13.29 15.72 14.95C15.75 15.1 15.77 15.25 15.77 15.41C15.8 16.3 15.4 17.26 14.72 17.84ZM12.4 4.34C12.28 4.42 12.18 4.49 12.09 4.56C9.10001 6.87 9.18001 10.49 9.78001 13.11L9.79001 13.14L9.80001 13.17C9.86001 13.52 9.75001 13.87 9.52001 14.13C9.28001 14.39 8.94001 14.54 8.57001 14.54C8.13001 14.54 7.72001 14.34 7.35001 13.94C6.68001 13.21 6.18001 12.37 5.85001 11.48C5.49001 12.25 5.10001 13.46 5.18001 14.67C5.22001 15.18 5.30001 15.67 5.43001 16.1C5.61001 16.7 5.86001 17.26 6.18001 17.75C7.23001 19.41 9.06001 20.57 10.96 20.8C11.38 20.85 11.81 20.88 12.22 20.88C13.56 20.88 15.47 20.61 16.96 19.31C18.73 17.75 19.31 15.32 18.4 13.25C18.36 13.15 18.34 13.11 18.31 13.06L18.27 12.98C18.06 12.56 17.8 12.17 17.52 11.84C17.28 11.54 17.04 11.28 16.73 11.01C16.43 10.74 16.09 10.5 15.73 10.24C15.27 9.91 14.8 9.57 14.35 9.15C12.98 7.83 12.3 6.11 12.4 4.34ZM14.41 2C14.41 2 14.21 2.2 13.85 2.99C13.19 4.91 13.7 6.94 15.19 8.38C15.92 9.07 16.8 9.55 17.55 10.22C17.87 10.51 18.17 10.81 18.44 11.15C18.8 11.57 19.1 12.04 19.35 12.53C19.4 12.63 19.45 12.73 19.49 12.83C20.61 15.38 19.85 18.3 17.76 20.14C16.23 21.47 14.22 22 12.22 22C11.75 22 11.27 21.97 10.81 21.91C8.52001 21.63 6.39001 20.25 5.18001 18.34C4.79001 17.74 4.50001 17.08 4.30001 16.41C4.14001 15.87 4.05001 15.31 4.01001 14.74C3.89001 12.86 4.68001 11.11 5.09001 10.43C5.50001 9.74 6.64001 8.25 6.64001 8.25C6.64001 8.25 6.64001 8.28 6.63001 8.34C6.41001 10.11 7.00001 11.88 8.22001 13.22C8.37001 13.39 8.49001 13.44 8.56001 13.44C8.62001 13.44 8.65001 13.4 8.64001 13.35C7.79001 9.59 8.37001 6 11.35 3.7C11.94 3.24 12.86 2.76 13.33 2.52C13.8 2.28 14.41 2 14.41 2Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2707">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Trending</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2715)">
+                  <path
+                    d="M12 4V13.38C11.27 12.54 10.2 12 9 12C6.79 12 5 13.79 5 16C5 18.21 6.79 20 9 20C11.21 20 13 18.21 13 16V8H19V4H12ZM9 19C7.34 19 6 17.66 6 16C6 14.34 7.34 13 9 13C10.66 13 12 14.34 12 16C12 17.66 10.66 19 9 19ZM18 7H13V5H18V7Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2715">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Music</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2723)">
+                  <path
+                    d="M22.01 4.90995L21.51 1.94995L1.64001 5.18995L2.00001 7.99995V21H22V7.99995H3.06001L22.01 4.90995ZM5.00001 8.99995L6.00001 12H9.00001L8.00001 8.99995H10L11 12H14L13 8.99995H15L16 12H19L18 8.99995H21V20H3.00001V8.99995H5.00001Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2723">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Movies & TV</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2731)">
+                  <path
+                    d="M14 12C14 13.1 13.1 14 12 14C10.9 14 10 13.1 10 12C10 10.9 10.9 10 12 10C13.1 10 14 10.9 14 12ZM8.48 8.45004L7.77 7.75004C6.68 8.83004 6 10.34 6 12C6 13.66 6.68 15.17 7.77 16.25L8.48 15.54C7.57 14.64 7 13.39 7 12C7 10.61 7.57 9.36004 8.48 8.45004ZM16.23 7.75004L15.52 8.46004C16.43 9.36004 17 10.61 17 12C17 13.39 16.43 14.64 15.52 15.55L16.23 16.26C17.32 15.17 18 13.66 18 12C18 10.34 17.32 8.83004 16.23 7.75004ZM5.65 5.63004L4.95 4.92004C3.13 6.73004 2 9.24004 2 12C2 14.76 3.13 17.27 4.95 19.08L5.66 18.37C4.02 16.74 3 14.49 3 12C3 9.51004 4.02 7.26004 5.65 5.63004ZM19.05 4.92004L18.34 5.63004C19.98 7.26004 21 9.51004 21 12C21 14.49 19.98 16.74 18.35 18.37L19.06 19.08C20.87 17.27 22 14.76 22 12C22 9.24004 20.87 6.73004 19.05 4.92004Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2731">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Live</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2739)">
+                  <path
+                    d="M10 12H8V14H6V12H4V10H6V8H8V10H10V12ZM17 12.5C17 11.67 16.33 11 15.5 11C14.67 11 14 11.67 14 12.5C14 13.33 14.67 14 15.5 14C16.33 14 17 13.33 17 12.5ZM20 9.5C20 8.67 19.33 8 18.5 8C17.67 8 17 8.67 17 9.5C17 10.33 17.67 11 18.5 11C19.33 11 20 10.33 20 9.5ZM16.97 5.15L12.47 7.68L11.98 7.95L11.49 7.68L6.99 5.15L3 7.39V13.82L11.98 18.86L20.96 13.82V7.39L16.97 5.15ZM16.97 4L21.96 6.8V14.4L11.98 20L2 14.4V6.8L6.99 4L11.98 6.8L16.97 4Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2739">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Gaming</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2747)">
+                  <path
+                    d="M11 11V17H7V11H11ZM12 10H6V18H12V10ZM3 3.03003V21H17L21 17V3.03003M20 4.00003V15.99L19.99 16H16V19.99L15.99 20H4V4.00003H20ZM18 8.00003H6V6.00003H18V8.00003ZM18 15H13V13H18V15ZM18 12H13V10H18V12Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2747">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">News</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2755)">
+                  <path
+                    d="M17 3V5V6V10V10.51L16.99 10.97C16.94 13.1 15.66 14.94 13.74 15.67H13.72L13.66 15.69L13 15.95V16.65V19V20H14V21H15H10V20H11V19V16.65V15.95L10.34 15.71L10.26 15.68H10.25C8.33 14.95 7.05 13.11 7 10.98V10.51V10V6V5V3H17ZM18 2H6V5H4V6V10V11H6.01C6.07 13.53 7.63 15.78 9.97 16.64C9.98 16.64 9.99 16.64 10 16.65V19H9V20H8V22H16V20H15V19H14V16.65C14.01 16.65 14.02 16.65 14.03 16.64C16.36 15.78 17.93 13.54 17.99 11H20V10V6V5H18V2ZM18 10V6H19V10H18ZM5 10V6H6V10H5Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2755">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Sports</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2763)">
+                  <path
+                    d="M16 21H13.72C13.37 21.6 12.74 22 12 22C11.26 22 10.62 21.6 10.28 21H8V20H16V21ZM20 10C20 12.96 18.39 15.54 16 16.92V19H8V16.92C5.61 15.54 4 12.96 4 10C4 5.58 7.58 2 12 2C16.42 2 20 5.58 20 10ZM15 18V16.34L15.5 16.05C17.66 14.8 19 12.48 19 10C19 6.14 15.86 3 12 3C8.14 3 5 6.14 5 10C5 12.48 6.34 14.8 8.5 16.06L9 16.34V18H15Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2763">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Learning</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2771)">
+                  <path
+                    d="M12.5 6.44V5.94C13.36 5.71 14 4.93 14 4C14 2.9 13.1 2 12 2C10.9 2 10 2.9 10 4H11C11 3.45 11.45 3 12 3C12.55 3 13 3.45 13 4C13 4.55 12.55 5 12 5H11.5V6.44L4 13H6V19H7V21H8V19H10V22H11V19H13V21H14V19H15V16H18V13H20L12.5 6.44ZM6.66 12L12 7.33L17.34 12H6.66ZM14 18H7V13H14V18ZM15 15V13H17V15H15Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2771">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Fashion & Beauty</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2779)">
+                  <path
+                    d="M6 12C6 8.69 8.69 6 12 6C15.31 6 18 8.69 18 12C18 13.66 17.33 15.16 16.23 16.25L15.52 15.54C16.44 14.63 17 13.38 17 12C17 9.24 14.76 7 12 7C9.24 7 7 9.24 7 12C7 13.38 7.56 14.63 8.47 15.54L7.76 16.25C6.67 15.16 6 13.66 6 12ZM14 12C14 10.9 13.1 10 12 10C10.9 10 10 10.9 10 12C10 12.74 10.4 13.38 11 13.72V22H13V13.72C13.6 13.38 14 12.74 14 12ZM4.94 19.08L5.65 18.37C4.01 16.74 3 14.49 3 12C3 7.04 7.04 3 12 3C16.96 3 21 7.04 21 12C21 14.49 19.99 16.74 18.35 18.37L19.06 19.08C20.88 17.27 22 14.77 22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 14.77 3.12 17.27 4.94 19.08Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2779">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Podcasts</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav 5 -->
+      <nav class="hidden-nav py-4 pl-3 pr-6 border-b border-main/[0.05]">
+        <ul>
+          <li>
+            <a class="group nav-link flex items-center py-2 px-3 rounded-[10px] gap-6 hover:bg-main/[0.05]" href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_2788)">
+                  <path
+                    d="M17 13H13V17H11V13H7V11H11V7H13V11H17V13ZM12 3C7.04 3 3 7.04 3 12C3 16.96 7.04 21 12 21C16.96 21 21 16.96 21 12C21 7.04 16.96 3 12 3ZM12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2Z"
+                    fill="#030303" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_2788">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="text-sm leading-4 group-hover:font-medium">Browse channels</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav 6 -->
+      <nav class="hidden-nav py-4 pl-3 pr-6 border-b border-main/[0.05]">
+        <h3 class="pl-3 mb-[6px] text-base">More from YouTube</h3>
+      </nav>
+
+    </aside>
+
+    <!-- Mobile Menu -->
+    <nav class="hidden fixed bottom-0 right-0 left-0 p-4 bg-main/[0.05] sm:block">
+      <ul class="grid grid-cols-4">
+        <li class="flex justify-around items-center">
+          <a href="#">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_2653)">
+                <path d="M4 10V21H10V15H14V21H20V10L12 3L4 10Z" fill="transparent" stroke="#030303" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_2653">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+
+        <li class="flex justify-around items-center">
+          <a href="#">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_2661)">
+                <path
+                  d="M10 14.65V9.34999L15 12L10 14.65ZM17.77 10.32C17 9.99999 16.57 9.81999 16.57 9.81999L18 9.05999C19.84 8.09999 20.53 5.82999 19.56 3.99999C18.59 2.16999 16.32 1.46999 14.49 2.43999L6.00001 6.93999C4.71001 7.61999 3.93001 8.97999 4.00001 10.43C4.07001 11.85 4.93001 13.1 6.22001 13.68C6.25001 13.69 7.42001 14.18 7.42001 14.18L6.00001 14.93C4.17001 15.9 3.47001 18.17 4.44001 20C5.41001 21.83 7.68001 22.53 9.51001 21.56L18.01 17.06C19.3 16.38 20.07 15.02 20 13.57C19.93 12.15 19.06 10.89 17.77 10.32ZM17.54 16.18L9.04001 20.68C7.70001 21.39 6.03001 20.88 5.32001 19.54C4.61001 18.2 5.12001 16.53 6.46001 15.82L8.50001 14.74V13.53L7.81001 13.25L6.70001 12.79C5.71001 12.38 5.05001 11.44 5.00001 10.38C4.95001 9.31999 5.52001 8.31999 6.46001 7.81999L14.96 3.31999C16.3 2.60999 17.97 3.11999 18.68 4.45999C19.39 5.79999 18.88 7.46999 17.54 8.17999L15.5 9.25999V10.47L17.3 11.21C18.29 11.62 18.95 12.56 19 13.62C19.05 14.68 18.48 15.68 17.54 16.18Z"
+                  fill="#030303" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_2661">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+
+        <li class="flex justify-around items-center">
+          <a href="#">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_2669)">
+                <path d="M10 18V12L15 15L10 18ZM17 3H7V4H17V3ZM20 6H4V7H20V6ZM22 9H2V21H22V9ZM3 10H21V20H3V10Z"
+                  fill="#030303" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_2669">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+
+        <li class="flex justify-around items-center">
+          <a href="#">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_2679)">
+                <path d="M11 7L17 10.5L11 14V7ZM18 20H4V6H3V21H18V20ZM21 18H6V3H21V18ZM7 17H20V4H7V17Z"
+                  fill="#030303" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_2679">
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Contents -->
+    <section class="content w-full">
+      <div class="container relative flex">
+
+        <!-- Tabs -->
+        <div class="flex items-center gap-3 pt-5 overflow-hidden sm:pt-2 sm:gap-2">
+          <button
+            class="active category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">All</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Live</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">News</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Lo-fi</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Gaming</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Music</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Comedy</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Tools</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Comping</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Meditation
+            music</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Piano</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">History</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Trucks</button>
+          <button
+            class="category-link flex flex-shrink-0 py-[6px] px-3 bg-main/[0.05] rounded-lg sm:text-xs hover:bg-main/10 sm:text-xs">Quarterbacks</button>
+        </div>
+
+        <button
+          class="absolute top-3 right-4 bottom-0 w-[110px] flex items-center justify-end ml-2 bg-gradient sm:top-2">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_2637)">
+              <path d="M9.39997 18.4L8.69998 17.7L14.3 12.1L8.59998 6.40001L9.29998 5.70001L15.7 12.1L9.39997 18.4Z"
+                fill="#0F0F0F" />
+            </g>
+            <defs>
+              <clipPath id="clip0_1_2637">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Video -->
+      <div class="container">
+        <div class="pt-6 pb-6 border-y-4 border-black/10 mt-6 sm:py-6">
+          <h3 class="text-main text-xl leading-6">Trending</h3>
+
+          <!-- Video Row -->
+          <div class="grid grid-cols-4 gap-4 mt-6 lg:grid-cols-3 md:grid-cols-2 xs:grid-cols-1">
+
+            <!-- Video Item -->
+            <a class="" href="#">
+              <!-- Video Poster -->
+              <div class="relative rounded-xl overflow-hidden">
+                <img class="max-w-full w-full h-auto" src="./assets/video-1.jpg" alt="img">
+                <span
+                  class="absolute bottom-1 right-1 px-1 py-[2px] bg-black/80 rounded text-white inline-block font-medium text-xs leading-none">13:12</span>
+              </div>
+
+              <!-- Video Info -->
+              <div class="flex gap-3 mt-3">
+                <img class="w-9 h-9 rounded-full" src="./assets/avatar-1.png" alt="author">
+                <div>
+                  <h5 class="text-main text-sm font-medium">The Stickiest Non-Sticky Substance</h5>
+
+                  <p class="flex gap-1 items-center mt-[6px]">
+                    <span class="text-secondary text-xs leading-[14px]">Veritasium</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1_756)">
+                        <path
+                          d="M7.375 2.026C4.16667 2.026 1.54167 4.651 1.54167 7.85933C1.54167 11.0677 4.16667 13.6927 7.375 13.6927C10.5833 13.6927 13.2083 11.0677 13.2083 7.85933C13.2083 4.651 10.5833 2.026 7.375 2.026ZM6.09167 10.951L3.64167 8.55933L4.45834 7.74267L6.09167 9.31767L10.2917 5.176L11.1083 5.99267L6.09167 10.951Z"
+                          fill="#606060" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1_756">
+                          <rect width="14" height="14" fill="white" transform="translate(0.375 0.859375)" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </p>
+
+                  <ul class="flex items-center gap-1 mt-1">
+                    <li class="text-xs text-secondary leading-[14px]">1.1M views</li>
+                    <li class="text-xs text-secondary leading-[14px]">• 18 hours ago</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+              <!-- Video Poster -->
+              <div class="relative rounded-xl overflow-hidden">
+                <img class="max-w-full w-full h-auto" src="./assets/video-2.jpg" alt="img">
+                <span
+                  class="absolute bottom-1 right-1 px-1 py-[2px] bg-black/80 rounded text-white inline-block font-medium text-xs leading-none">13:12</span>
+              </div>
+
+              <!-- Video Info -->
+              <div class="flex gap-3 mt-3">
+                <img class="w-9 h-9 rounded-full" src="./assets/avatar-2.png" alt="author">
+                <div>
+                  <h5 class="text-main text-sm font-medium">Dua Lipa, Calvin Harris, Coldplay, Martin Garrix & Kygo</h5>
+
+                  <p class="flex gap-1 items-center mt-[6px]">
+                    <span class="text-secondary text-xs leading-[14px]">Haa Taa Deep</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1_756)">
+                        <path
+                          d="M7.375 2.026C4.16667 2.026 1.54167 4.651 1.54167 7.85933C1.54167 11.0677 4.16667 13.6927 7.375 13.6927C10.5833 13.6927 13.2083 11.0677 13.2083 7.85933C13.2083 4.651 10.5833 2.026 7.375 2.026ZM6.09167 10.951L3.64167 8.55933L4.45834 7.74267L6.09167 9.31767L10.2917 5.176L11.1083 5.99267L6.09167 10.951Z"
+                          fill="#606060" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1_756">
+                          <rect width="14" height="14" fill="white" transform="translate(0.375 0.859375)" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </p>
+
+                  <ul class="flex items-center gap-1 mt-1">
+                    <li class="text-xs text-secondary leading-[14px]">4.8K watching</li>
+                    <li class="text-xs text-secondary leading-[14px]"></li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+              <!-- Video Poster -->
+              <div class="relative rounded-xl overflow-hidden">
+                <img class="max-w-full w-full h-auto" src="./assets/video-3.jpg" alt="img">
+                <span
+                  class="absolute bottom-1 right-1 px-1 py-[2px] bg-black/80 rounded text-white inline-block font-medium text-xs leading-none">13:12</span>
+              </div>
+
+              <!-- Video Info -->
+              <div class="flex gap-3 mt-3">
+                <img class="w-9 h-9 rounded-full" src="./assets/avatar-3.png" alt="author">
+                <div>
+                  <h5 class="text-main text-sm font-medium">Top 10 Things You Missed in The Last of Us Episode 1</h5>
+
+                  <p class="flex gap-1 items-center mt-[6px]">
+                    <span class="text-secondary text-xs leading-[14px]">WatchMojo.com</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1_756)">
+                        <path
+                          d="M7.375 2.026C4.16667 2.026 1.54167 4.651 1.54167 7.85933C1.54167 11.0677 4.16667 13.6927 7.375 13.6927C10.5833 13.6927 13.2083 11.0677 13.2083 7.85933C13.2083 4.651 10.5833 2.026 7.375 2.026ZM6.09167 10.951L3.64167 8.55933L4.45834 7.74267L6.09167 9.31767L10.2917 5.176L11.1083 5.99267L6.09167 10.951Z"
+                          fill="#606060" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1_756">
+                          <rect width="14" height="14" fill="white" transform="translate(0.375 0.859375)" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </p>
+
+                  <ul class="flex items-center gap-1 mt-1">
+                    <li class="text-xs text-secondary leading-[14px]">515K views</li>
+                    <li class="text-xs text-secondary leading-[14px]">• 7 days ago</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+              <!-- Video Poster -->
+              <div class="relative rounded-xl overflow-hidden">
+                <img class="max-w-full w-full h-auto" src="./assets/video-4.jpg" alt="img">
+                <span
+                  class="absolute bottom-1 right-1 px-1 py-[2px] bg-black/80 rounded text-white inline-block font-medium text-xs leading-none">13:12</span>
+              </div>
+
+              <!-- Video Info -->
+              <div class="flex gap-3 mt-3">
+                <img class="w-9 h-9 rounded-full" src="./assets/avatar-4.png" alt="author">
+                <div>
+                  <h5 class="text-main text-sm font-medium">Deep Focus Music To Improve Concentration</h5>
+
+                  <p class="flex gap-1 items-center mt-[6px]">
+                    <span class="text-secondary text-xs leading-[14px]">4K Video Nature - Focus Music</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1_756)">
+                        <path
+                          d="M7.375 2.026C4.16667 2.026 1.54167 4.651 1.54167 7.85933C1.54167 11.0677 4.16667 13.6927 7.375 13.6927C10.5833 13.6927 13.2083 11.0677 13.2083 7.85933C13.2083 4.651 10.5833 2.026 7.375 2.026ZM6.09167 10.951L3.64167 8.55933L4.45834 7.74267L6.09167 9.31767L10.2917 5.176L11.1083 5.99267L6.09167 10.951Z"
+                          fill="#606060" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1_756">
+                          <rect width="14" height="14" fill="white" transform="translate(0.375 0.859375)" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </p>
+
+                  <ul class="flex items-center gap-1 mt-1">
+                    <li class="text-xs text-secondary leading-[14px]">1.8M views</li>
+                    <li class="text-xs text-secondary leading-[14px]">• Streamed 8 months ago</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Shorts -->
+      <div class="container">
+        <div class="pb-6 border-b-4 border-black/10 mt-6 sm:py-6">
+          <h3 class="text-main text-xl leading-6 flex gap-2 items-center">
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_487)">
+                <path
+                  d="M18.4182 11.1567L17.2182 10.6567L18.6482 9.89668C19.5261 9.43255 20.1836 8.6387 20.4762 7.68976C20.7687 6.74083 20.6723 5.71454 20.2082 4.83668C19.7441 3.95881 18.9502 3.30127 18.0013 3.00872C17.0524 2.71616 16.0261 2.81255 15.1482 3.27668L6.64822 7.77668C6.02344 8.10311 5.50363 8.59947 5.14873 9.20853C4.79382 9.81758 4.61827 10.5145 4.64231 11.2191C4.66635 11.9236 4.88901 12.6069 5.28461 13.1904C5.6802 13.7738 6.23264 14.2336 6.87822 14.5167L8.07822 15.0067L6.64822 15.7667C5.79753 16.2463 5.16752 17.0389 4.89217 17.9759C4.61681 18.9128 4.71783 19.9203 5.17374 20.7839C5.62966 21.6475 6.4045 22.2992 7.33348 22.6004C8.26246 22.9016 9.27229 22.8285 10.1482 22.3967L18.6482 17.8967C19.273 17.5702 19.7928 17.0739 20.1477 16.4648C20.5026 15.8558 20.6782 15.1588 20.6541 14.4543C20.6301 13.7498 20.4074 13.0664 20.0118 12.483C19.6162 11.8995 19.0638 11.4398 18.4182 11.1567Z"
+                  fill="#FF0000" />
+                <path d="M10.6482 15.4866L15.6482 12.8366L10.6482 10.1866V15.4866Z" fill="white" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_487">
+                  <rect width="24" height="24" fill="white" transform="translate(0.648193 0.83667)" />
+                </clipPath>
+              </defs>
+            </svg>
+            <span>Shorts</span>
+          </h3>
+
+          <!-- Video Row -->
+          <div class="grid grid-cols-7 gap-4 mt-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2">
+
+            <!-- Video Item -->
+            <a class="" href="#">
+
+              <!-- Video Poster -->
+              <img class="max-w-full w-full h-auto rounded-xl" src="./assets/short-5.jpg" alt="img">
+
+              <!-- Video Info -->
+              <div class="mt-3">
+                <h5 class="text-main text-sm font-medium">Paraíso de Camboya 🤩</h5>
+
+                <ul class="flex items-center gap-1 mt-1">
+                  <li class="text-xs text-secondary leading-[14px]">12M views</li>
+                </ul>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+
+              <!-- Video Poster -->
+              <img class="max-w-full w-full h-auto rounded-xl" src="./assets/short-1.jpg" alt="img">
+
+              <!-- Video Info -->
+              <div class="mt-3">
+                <h5 class="text-main text-sm font-medium">Paraíso de Camboya 🤩</h5>
+
+                <ul class="flex items-center gap-1 mt-1">
+                  <li class="text-xs text-secondary leading-[14px]">12M views</li>
+                </ul>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+
+              <!-- Video Poster -->
+              <img class="max-w-full w-full h-auto rounded-xl" src="./assets/short-3.jpg" alt="img">
+
+              <!-- Video Info -->
+              <div class="mt-3">
+                <h5 class="text-main text-sm font-medium">Paraíso de Camboya 🤩</h5>
+
+                <ul class="flex items-center gap-1 mt-1">
+                  <li class="text-xs text-secondary leading-[14px]">12M views</li>
+                </ul>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+
+              <!-- Video Poster -->
+              <img class="max-w-full w-full h-auto rounded-xl" src="./assets/short-2.jpg" alt="img">
+
+              <!-- Video Info -->
+              <div class="mt-3">
+                <h5 class="text-main text-sm font-medium">Paraíso de Camboya 🤩</h5>
+
+                <ul class="flex items-center gap-1 mt-1">
+                  <li class="text-xs text-secondary leading-[14px]">12M views</li>
+                </ul>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+
+              <!-- Video Poster -->
+              <img class="max-w-full w-full h-auto rounded-xl" src="./assets/short-4.jpg" alt="img">
+
+              <!-- Video Info -->
+              <div class="mt-3">
+                <h5 class="text-main text-sm font-medium">Paraíso de Camboya 🤩</h5>
+
+                <ul class="flex items-center gap-1 mt-1">
+                  <li class="text-xs text-secondary leading-[14px]">12M views</li>
+                </ul>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+
+              <!-- Video Poster -->
+              <img class="max-w-full w-full h-auto rounded-xl" src="./assets/short-6.jpg" alt="img">
+
+              <!-- Video Info -->
+              <div class="mt-3">
+                <h5 class="text-main text-sm font-medium">Paraíso de Camboya 🤩</h5>
+
+                <ul class="flex items-center gap-1 mt-1">
+                  <li class="text-xs text-secondary leading-[14px]">12M views</li>
+                </ul>
+              </div>
+            </a>
+
+            <!-- Video Item -->
+            <a class="" href="#">
+
+              <!-- Video Poster -->
+              <img class="max-w-full w-full h-auto rounded-xl" src="./assets/short-7.jpg" alt="img">
+
+              <!-- Video Info -->
+              <div class="mt-3">
+                <h5 class="text-main text-sm font-medium">Paraíso de Camboya 🤩</h5>
+
+                <ul class="flex items-center gap-1 mt-1">
+                  <li class="text-xs text-secondary leading-[14px]">12M views</li>
+                </ul>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
